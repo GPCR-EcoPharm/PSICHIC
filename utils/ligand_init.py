@@ -473,6 +473,9 @@ def smiles2graph(m_str):
 def ligand_init(smiles_list):
     ligand_dict = {}
     for smiles in tqdm(smiles_list):
-        ligand_dict[smiles] = smiles2graph(smiles)
+        try:
+            ligand_dict[smiles] = smiles2graph(smiles)
+        except:
+            print('[WARNING] Fail smiles2graph', smiles)
 
     return ligand_dict
