@@ -297,7 +297,7 @@ def store_result(df, attention_dict, interaction_keys,  ligand_dict,
 
         if save_interpret:
             for pair_id in df[matching_row]['ID']:
-                pair_path = os.path.join(result_path,pair_id)
+                pair_path = os.path.join(result_path,str(pair_id))
                 if not os.path.exists(pair_path):
                     os.makedirs(pair_path)
                 ## STORE Protein Interpretation
