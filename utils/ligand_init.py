@@ -1,12 +1,14 @@
-from rdkit import Chem
-from rdkit.Chem.rdchem import BondType
-
-from rdkit.Chem import ChemicalFeatures
-from rdkit import RDConfig
 import os
 import numpy as np
-
 import torch
+
+from rdkit import Chem
+from rdkit.Chem.rdchem import BondType
+from rdkit.Chem import ChemicalFeatures
+from rdkit import RDConfig
+from rdkit import RDLogger
+RDLogger.DisableLog('rdApp.warning')
+
 
 fdefName = os.path.join(RDConfig.RDDataDir,'BaseFeatures.fdef')
 factory = ChemicalFeatures.BuildFeatureFactory(fdefName)
